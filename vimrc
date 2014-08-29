@@ -29,8 +29,11 @@ set expandtab
 set backspace=start,indent,eol
 set nofoldenable foldmethod=indent
 "set colorcolumn=80
+set nowrap
 
 autocmd BufNewFile,BufRead *.mako setlocal ft=mako
+autocmd FileType css,javascript,xhtml,html,xml :set ts=2 sw=2 sts=2 et
+autocmd FileType make :set ts=4 noet nolist
 
 map <F8> :set invpaste<CR>
 set pastetoggle=<F8>
@@ -38,6 +41,12 @@ set pastetoggle=<F8>
 let mapleader=","
 let g:pep8_map='<leader>8'
 let g:pyflakes_use_quickfix = 0
+
+vmap Q gq
+nmap Q gqap
+
+noremap q: <C-l>
+noremap q? <C-l>
 
 " Transparent editing of GnuPG-encrypted files
 " Based on a solution by Wouter Hanegraaff
