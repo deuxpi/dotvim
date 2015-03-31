@@ -84,4 +84,4 @@ augroup encrypted
   autocmd BufWritePost,FileWritePost *.gpg,*.asc u
 augroup END
 
-let g:languagetool_jar='~/.vim/bundle/LanguageTool/LanguageTool-2.8/languagetool.jar'
+let g:languagetool_jar='~/.vim/bundle/LanguageTool/LanguageTool-2.8/languagetool-commandline.jar'
