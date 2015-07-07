@@ -3,54 +3,80 @@ call pathogen#infect()
 call pathogen#helptags()
 
 set nocompatible
-syntax on
-filetype on
+
+" Enable filetype plugins
 filetype plugin on
-filetype plugin on
-filetype plugin indent on
+filetype indent on
 
 set showfulltag
 set showcmd
-set showmatch
 set showmode
 set ruler
 set wildmenu
+set magic
 
+" Blink matching brackets for some tenth of a second
+set showmatch
+set mat=2
+
+" Syntax highlighting
+syntax on
 set background=dark
-set t_Co=16
+set t_Co=256
 colorscheme solarized
 
-set tabstop=4
-set autoindent
-set smarttab
-set shiftwidth=4
 set undolevels=1000
-set expandtab
 set backspace=start,indent,eol
-set nofoldenable foldmethod=indent
-"set colorcolumn=80
+
+" Code formatting, tabs to 4 spaces
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set autoindent
+set smartindent
 set nowrap
 
+" Typically useful for Python code
+set nofoldenable foldmethod=indent
+
+" Turn all kinds of temporary files off
+set nobackup
+set nowb
+set noswapfile
+
+" Override some formatting defaults based on the filetype
 autocmd BufNewFile,BufRead *.mako setlocal ft=mako
 autocmd FileType css,javascript,xhtml,html,xml :set ts=2 sw=2 sts=2 et
 autocmd FileType make :set ts=4 noet nolist
 
+" Toggle code formatting when pasting chunks of text. Ridiculously useful.
 map <F8> :set invpaste<CR>
 set pastetoggle=<F8>
 
+" Enable extra key combinations like <leader>q to reformat a paragraph.
 let mapleader=","
-let g:pep8_map='<leader>8'
+
+" When using the older PEP8 plugin, execute by typing <leader>8.
+" let g:pep8_map='<leader>8'
+
+" Configure Flake8
 let g:pyflakes_use_quickfix = 0
 let g:flake8_show_quickfix=1
 let g:flake8_show_in_gutter=1
 let g:flake8_show_in_file=1
 "autocmd BufWritePost *.py call Flake8()
 
-vmap Q gq
-nmap Q gqap
+vmap <leader>q gq
+nmap <leader>q gqap
 
 noremap q: <C-l>
 noremap q? <C-l>
+
+" Highlight suspicious characters based on
+" https://wincent.com/blog/making-vim-highlight-suspicious-characters
+set listchars=nbsp:¬,eol:¶,tab:>-,extends:»,precedes:«,trail:•
+map <F9> :set invlist<CR>
 
 " Transparent editing of GnuPG-encrypted files
 " Based on a solution by Wouter Hanegraaff

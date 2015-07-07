@@ -19,3 +19,6 @@
 [submodule "bundle/vim-go"]
     path = bundle/vim-go
     url = git@github.com:fatih/vim-go.git
+[submodule "bundle/vim-scala"]
+	path = bundle/vim-scala
+	url = git@github.com:derekwyatt/vim-scala.git
