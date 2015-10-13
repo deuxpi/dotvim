@@ -23,7 +23,12 @@ set mat=2
 syntax on
 set background=dark
 set t_Co=256
-colorscheme solarized
+
+if hostname() == "mail"
+  colorscheme ir_black
+else
+  colorscheme solarized
+endif
 
 set undolevels=1000
 set backspace=start,indent,eol
