@@ -28,6 +28,7 @@ if hostname() == "mail"
   colorscheme ir_black
 else
   colorscheme solarized
+  let g:solarized_visibility="low"
 endif
 
 set undolevels=1000
@@ -80,7 +81,9 @@ noremap q? <C-l>
 
 " Highlight suspicious characters based on
 " https://wincent.com/blog/making-vim-highlight-suspicious-characters
-set listchars=nbsp:¬,eol:¶,tab:>-,extends:»,precedes:«,trail:•
+set listchars=space:␣,nbsp:¬,tab:>-,extends:»,precedes:«,trail:•
+highlight NonText term=none cterm=none ctermfg=0 ctermbg=8 gui=none
+highlight SpecialKey term=none cterm=none ctermfg=0 ctermbg=8 gui=none
 map <F9> :set invlist<CR>
 
 " Transparent editing of GnuPG-encrypted files
