@@ -28,7 +28,8 @@ if hostname() == "mail"
   colorscheme ir_black
 else
   colorscheme solarized
-  let g:solarized_visibility="low"
+  let g:solarized_visibility = "low"
+  let g:solarized_term = 1
 endif
 
 set undolevels=1000
@@ -71,7 +72,6 @@ let g:pyflakes_use_quickfix = 0
 let g:flake8_show_quickfix=1
 let g:flake8_show_in_gutter=1
 let g:flake8_show_in_file=1
-"autocmd BufWritePost *.py call Flake8()
 
 vmap <leader>q gq
 nmap <leader>q gqap
@@ -118,4 +118,9 @@ augroup encrypted
   autocmd BufWritePost,FileWritePost *.gpg,*.asc u
 augroup END
 
+" LanguageTool
 let g:languagetool_jar='~/.vim/bundle/LanguageTool/LanguageTool-2.8/languagetool-commandline.jar'
+
+" vim-airline
+set laststatus=2
+let g:airline_powerline_fonts = 1
