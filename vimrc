@@ -61,11 +61,14 @@ autocmd FileType make :set ts=4 noet nolist
 map <F8> :set invpaste<CR>
 set pastetoggle=<F8>
 
+" Automatically jump to end of text just pasted
+" https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
 " Enable extra key combinations like <leader>q to reformat a paragraph.
 let mapleader=","
-
-" When using the older PEP8 plugin, execute by typing <leader>8.
-" let g:pep8_map='<leader>8'
 
 " Configure Flake8
 let g:pyflakes_use_quickfix = 0
@@ -124,3 +127,6 @@ let g:languagetool_jar='~/.vim/bundle/LanguageTool/LanguageTool-2.8/languagetool
 " vim-airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
+
+" vim-json
+let g:vim_json_syntax_conceal = 0
