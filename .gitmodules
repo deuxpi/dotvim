@@ -40,9 +40,6 @@
 [submodule "bundle/vim-json"]
 	path = bundle/vim-json
 	url = git@github.com:elzr/vim-json.git
-[submodule "bundle/ropevim"]
-	path = bundle/ropevim
-	url = git@github.com:python-rope/ropevim.git
 [submodule "bundle/nose.vim"]
 	path = bundle/nose.vim
 	url = git@github.com:lambdalisue/nose.vim.git
@@ -61,3 +58,6 @@
 [submodule "bundle/vim-rhubarb"]
 	path = bundle/vim-rhubarb
 	url = https://github.com/tpope/vim-rhubarb.git
+[submodule "bundle/vim-rubocop"]
+	path = bundle/vim-rubocop
+	url = https://github.com/ngmy/vim-rubocop.git

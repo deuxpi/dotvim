@@ -59,6 +59,8 @@ autocmd BufNewFile,BufRead *.mako setlocal ft=mako
 autocmd FileType css,javascript,xhtml,html,xml :set ts=2 sw=2 sts=2 et
 autocmd FileType ruby :set ts=2 sw=2 sts=2 et
 autocmd FileType make :set ts=4 noet nolist
+autocmd BufNewFile,BufRead *.mrb set filetype=ruby
+autocmd FileType ruby,eruby :set ts=2 sw=2
 
 " Toggle code formatting when pasting chunks of text. Ridiculously useful.
 map <F8> :set invpaste<CR>
@@ -148,3 +150,9 @@ let g:syntastic_ruby_checkers = ['rubocop']
 " YouCompleteMe
 let g:ycm_server_python_interpreter='/usr/bin/python'
 let g:ycm_show_diagnostics_ui = 0
+
+" fzf
+set rtp+=/usr/local/opt/fzf
+
+" vim-rubocop
+let g:vimrubocop_rubocop_cmd = 'bundle exec rubocop'
