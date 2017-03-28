@@ -34,13 +34,16 @@ endif
 
 set undolevels=1000
 set backspace=start,indent,eol
+set scrolloff=1
+set sidescrolloff=5
 
 " Code formatting, tabs to 4 spaces
+set autoindent
 set expandtab
+set nrformats-=octal
 set tabstop=4
 set shiftwidth=4
 set smarttab
-set autoindent
 set nowrap
 
 " Typically useful for Python code
