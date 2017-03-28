@@ -54,6 +54,7 @@ set noswapfile
 " Override some formatting defaults based on the filetype
 autocmd BufNewFile,BufRead *.mako setlocal ft=mako
 autocmd FileType css,javascript,xhtml,html,xml :set ts=2 sw=2 sts=2 et
+autocmd FileType ruby :set ts=2 sw=2 sts=2 et
 autocmd FileType make :set ts=4 noet nolist
 
 " Toggle code formatting when pasting chunks of text. Ridiculously useful.
@@ -129,3 +130,18 @@ let g:airline_powerline_fonts = 1
 
 " vim-json
 let g:vim_json_syntax_conceal = 0
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_asm_checkers = []
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_ruby_checkers = ['rubocop']
+
+" YouCompleteMe
+let g:ycm_server_python_interpreter='/usr/bin/python'
+let g:ycm_show_diagnostics_ui = 0

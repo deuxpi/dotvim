@@ -13,9 +13,6 @@
 [submodule "bundle/LanguageTool"]
     path = bundle/LanguageTool
     url = git@github.com:vim-scripts/LanguageTool.git
-[submodule "bundle/YouCompleteMe"]
-    path = bundle/YouCompleteMe
-    url = git@github.com:Valloric/YouCompleteMe.git
 [submodule "bundle/vim-go"]
     path = bundle/vim-go
     url = git@github.com:fatih/vim-go.git
@@ -52,3 +49,9 @@
 [submodule "bundle/coveragepy.vim"]
 	path = bundle/coveragepy.vim
 	url = git@github.com:alfredodeza/coveragepy.vim.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
