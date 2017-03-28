@@ -136,6 +136,9 @@ let g:airline_powerline_fonts = 1
 " vim-json
 let g:vim_json_syntax_conceal = 0
 
+" supertab
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
 " syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -147,7 +150,14 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_ruby_checkers = ['rubocop']
 
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 " YouCompleteMe
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:ycm_server_python_interpreter='/usr/bin/python'
 let g:ycm_show_diagnostics_ui = 0
 
