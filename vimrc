@@ -86,6 +86,7 @@ nmap <leader>q gqap
 
 noremap q: <C-l>
 noremap q? <C-l>
+command -bang Q q<bang>
 
 " Highlight suspicious characters based on
 " https://wincent.com/blog/making-vim-highlight-suspicious-characters
