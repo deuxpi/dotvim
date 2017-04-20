@@ -61,6 +61,7 @@ autocmd FileType ruby :set ts=2 sw=2 sts=2 et
 autocmd FileType make :set ts=4 noet nolist
 autocmd BufNewFile,BufRead *.mrb set filetype=ruby
 autocmd FileType ruby,eruby :set ts=2 sw=2
+autocmd FileType liquid :set noeol
 
 " Toggle code formatting when pasting chunks of text. Ridiculously useful.
 map <F8> :set invpaste<CR>
@@ -149,6 +150,7 @@ let g:syntastic_asm_checkers = []
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_ruby_checkers = ['rubocop']
 
 " UltiSnips
