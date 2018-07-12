@@ -54,13 +54,14 @@ set nobackup
 set nowb
 set noswapfile
 
+set viminfo='100,<1000,s100,h
+
 " Override some formatting defaults based on the filetype
 autocmd BufNewFile,BufRead *.mako setlocal ft=mako
+autocmd BufNewFile,BufRead *.mrb set ft=ruby
 autocmd FileType css,javascript,xhtml,html,xml :set ts=2 sw=2 sts=2 et
-autocmd FileType ruby :set ts=2 sw=2 sts=2 et
 autocmd FileType make :set ts=4 noet nolist
-autocmd BufNewFile,BufRead *.mrb set filetype=ruby
-autocmd FileType ruby,eruby :set ts=2 sw=2
+autocmd FileType ruby,eruby :set ts=2 sw=2 sts=2 et
 autocmd FileType liquid :set noeol
 
 " Toggle code formatting when pasting chunks of text. Ridiculously useful.
@@ -142,9 +143,6 @@ let g:vim_json_syntax_conceal = 0
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_asm_checkers = []
 let g:syntastic_auto_loc_list = 1
@@ -152,7 +150,10 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_perl_checkers = ['perlcritic']
+let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_ruby_rubocop_exe = 'bundle exec rubocop'
+let g:syntastic_sh_shellcheck_args="--exclude=SC1091"
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -170,3 +171,10 @@ set rtp+=/usr/local/opt/fzf
 
 " vim-rubocop
 let g:vimrubocop_rubocop_cmd = 'bundle exec rubocop'
+
+" vim-test
+let test#strategy = "dispatch"
+nmap <silent> tt :TestNearest<CR>
+nmap <silent> tf :TestFile<CR>
+let test#ruby#minitest#options = '-p'
+let test#ruby#rails#options = '-p'
