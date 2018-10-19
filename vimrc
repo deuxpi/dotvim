@@ -178,3 +178,9 @@ nmap <silent> tt :TestNearest<CR>
 nmap <silent> tf :TestFile<CR>
 let test#ruby#minitest#options = '-p'
 let test#ruby#rails#options = '-p'
+
+autocmd FileType ruby syn match sorbetSignature "\<sig\>" nextgroup=sorbetSignatureDeclaration skipwhite skipnl
+autocmd FileType ruby syn region sorbetSignatureBlock start="sig {" end="}"
+autocmd FileType ruby syn region sorbetSignatureBlock start="\<sig\> \<do\>" matchgroup=sorbetSignature end="\<end\>"
+autocmd FileType ruby hi def link sorbetSignature Comment
+autocmd FileType ruby hi def link sorbetSignatureBlock Comment
