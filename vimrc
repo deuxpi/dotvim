@@ -59,7 +59,11 @@ set viminfo='100,<1000,s100,h
 " Override some formatting defaults based on the filetype
 autocmd BufNewFile,BufRead *.mako setlocal ft=mako
 autocmd BufNewFile,BufRead *.mrb set ft=ruby
-autocmd FileType css,javascript,xhtml,html,xml :set ts=2 sw=2 sts=2 et
+autocmd BufNewFile,BufRead *.rbi set ft=ruby
+autocmd BufNewFile,BufRead *.ts set ft=javascript
+autocmd BufNewFile,BufRead *.tsx set ft=javascript
+autocmd FileType css,javascript,json,html,xhtml,xml :set ts=2 sw=2 sts=2 et
+autocmd FileType lua :set ts=2 sw=2 sts=2
 autocmd FileType make :set ts=4 noet nolist
 autocmd FileType ruby,eruby :set ts=2 sw=2 sts=2 et
 autocmd FileType liquid :set noeol
@@ -135,6 +139,20 @@ let g:languagetool_jar='~/.vim/bundle/LanguageTool/LanguageTool-2.8/languagetool
 " vim-airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#ale#enabled = 1
+
+" ale
+let g:ale_linters = {'ruby': ['rubocop']}
+let g:ale_ruby_rubocop_executable = 'bundle'
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 1
+
+" vim-gitgutter
+let g:gitgutter_sign_added = '●'
+let g:gitgutter_sign_modified = '●'
+let g:gitgutter_sign_removed = '●'
+let g:gitgutter_sign_removed_first_line = '●↑'
+let g:gitgutter_sign_modified_removed = '●'
 
 " vim-json
 let g:vim_json_syntax_conceal = 0
@@ -151,6 +169,8 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_perl_checkers = ['perlcritic']
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_eruby_ruby_quiet_messages =
+            \ {'regex': 'possibly useless use of a variable in void context'}
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_ruby_rubocop_exe = 'bundle exec rubocop'
 let g:syntastic_sh_shellcheck_args="--exclude=SC1091"
