@@ -62,7 +62,7 @@ autocmd BufNewFile,BufRead *.mrb set ft=ruby
 autocmd BufNewFile,BufRead *.rbi set ft=ruby
 autocmd BufNewFile,BufRead *.ts set ft=javascript
 autocmd BufNewFile,BufRead *.tsx set ft=javascript
-autocmd FileType css,javascript,json,html,xhtml,xml :set ts=2 sw=2 sts=2 et
+autocmd FileType css,javascript,json,html,scss,xhtml,xml :set ts=2 sw=2 sts=2 et
 autocmd FileType lua :set ts=2 sw=2 sts=2
 autocmd FileType make :set ts=4 noet nolist
 autocmd FileType ruby,eruby :set ts=2 sw=2 sts=2 et
