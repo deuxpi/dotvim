@@ -62,7 +62,7 @@ autocmd BufNewFile,BufRead *.mrb set ft=ruby
 autocmd BufNewFile,BufRead *.rbi set ft=ruby
 autocmd BufNewFile,BufRead *.ts set ft=javascript
 autocmd BufNewFile,BufRead *.tsx set ft=javascript
-autocmd FileType css,javascript,json,html,scss,xhtml,xml :set ts=2 sw=2 sts=2 et
+autocmd FileType coffee,css,javascript,json,html,scss,xhtml,xml :set ts=2 sw=2 sts=2 et
 autocmd FileType lua :set ts=2 sw=2 sts=2
 autocmd FileType make :set ts=4 noet nolist
 autocmd FileType ruby,eruby :set ts=2 sw=2 sts=2 et
@@ -144,8 +144,6 @@ let g:airline#extensions#ale#enabled = 1
 " ale
 let g:ale_linters = {'ruby': ['rubocop']}
 let g:ale_ruby_rubocop_executable = 'bundle'
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_insert_leave = 1
 
 " vim-gitgutter
 let g:gitgutter_sign_added = '●'

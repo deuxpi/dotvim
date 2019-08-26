@@ -88,3 +88,6 @@
 [submodule "bundle/ale"]
 	path = bundle/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "bundle/shadowenv.vim"]
+	path = bundle/shadowenv.vim
+	url = https://github.com/Shopify/shadowenv.vim.git
