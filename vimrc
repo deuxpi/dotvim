@@ -32,10 +32,13 @@ else
   let g:solarized_term = 1
 endif
 
+highlight Comment cterm=italic
+
 set undolevels=1000
 set backspace=start,indent,eol
 set scrolloff=1
 set sidescrolloff=5
+set nofoldenable
 
 " Code formatting, tabs to 4 spaces
 set autoindent
@@ -62,11 +65,16 @@ autocmd BufNewFile,BufRead *.mrb set ft=ruby
 autocmd BufNewFile,BufRead *.rbi set ft=ruby
 autocmd BufNewFile,BufRead *.ts set ft=javascript
 autocmd BufNewFile,BufRead *.tsx set ft=javascript
-autocmd FileType coffee,css,javascript,json,html,scss,xhtml,xml :set ts=2 sw=2 sts=2 et
+autocmd FileType coffee,css,javascript,json,html,scss,xhtml,xml :set ts=2 sw=2 sts=2 et ch=2
 autocmd FileType lua :set ts=2 sw=2 sts=2
 autocmd FileType make :set ts=4 noet nolist
-autocmd FileType ruby,eruby :set ts=2 sw=2 sts=2 et
+autocmd FileType ruby,eruby :set ts=2 sw=2 sts=2 et cc=120
 autocmd FileType liquid :set noeol
+
+" x = if condition
+"   something
+" end
+let g:ruby_indent_assignment_style = 'variable'
 
 " Toggle code formatting when pasting chunks of text. Ridiculously useful.
 map <F8> :set invpaste<CR>
@@ -93,6 +101,7 @@ nmap <leader>q gqap
 noremap q: <C-l>
 noremap q? <C-l>
 command -bang Q q<bang>
+command -bang W w<bang>
 
 " Highlight suspicious characters based on
 " https://wincent.com/blog/making-vim-highlight-suspicious-characters
@@ -142,8 +151,11 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
 
 " ale
-let g:ale_linters = {'ruby': ['rubocop']}
+let g:ale_linters = {'ruby': ['rubocop'], 'eruby': ['erblint'], 'javascript': ['eslint']}
+let g:ale_fixers = {'javascript': ['eslint'], 'ruby': ['rubocop']}
 let g:ale_ruby_rubocop_executable = 'bundle'
+let g:ale_eruby_erblint_executable = 'bundle'
+nmap <leader>f <Plug>(ale_fix)
 
 " vim-gitgutter
 let g:gitgutter_sign_added = '●'
