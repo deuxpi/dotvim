@@ -27,9 +27,12 @@ set t_Co=256
 if hostname() == "mail"
   colorscheme ir_black
 else
-  colorscheme solarized
-  let g:solarized_visibility = "low"
-  let g:solarized_term = 1
+  " colorscheme solarized
+  " let g:solarized_visibility = "low"
+  " let g:solarized_term = 1
+
+  colorscheme fairyfloss
+  set termguicolors
 endif
 
 highlight Comment cterm=italic

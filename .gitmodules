@@ -6,13 +6,13 @@
 	url = git://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/flake8"]
 	path = bundle/flake8
-	url = git@github.com:nvie/vim-flake8.git
+	url = https://github.com/nvie/vim-flake8.git
 [submodule "bundle/vim-go"]
     path = bundle/vim-go
-    url = git@github.com:fatih/vim-go.git
+    url = https://github.com/fatih/vim-go.git
 [submodule "bundle/vim-scala"]
 	path = bundle/vim-scala
-	url = git@github.com:derekwyatt/vim-scala.git
+	url = https://github.com/derekwyatt/vim-scala.git
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline
@@ -27,22 +27,19 @@
 	url = https://github.com/mileszs/ack.vim.git
 [submodule "bundle/vim-commentary"]
 	path = bundle/vim-commentary
-	url = git@github.com:tpope/vim-commentary.git
+	url = https://github.com/tpope/vim-commentary.git
 [submodule "bundle/vim-rsi"]
 	path = bundle/vim-rsi
-	url = git@github.com:tpope/vim-rsi.git
+	url = https://github.com/tpope/vim-rsi.git
 [submodule "bundle/vim-json"]
 	path = bundle/vim-json
-	url = git@github.com:elzr/vim-json.git
+	url = https://github.com/elzr/vim-json.git
 [submodule "bundle/nose.vim"]
 	path = bundle/nose.vim
-	url = git@github.com:lambdalisue/nose.vim.git
+	url = https://github.com/lambdalisue/nose.vim.git
 [submodule "bundle/coveragepy.vim"]
 	path = bundle/coveragepy.vim
-	url = git@github.com:alfredodeza/coveragepy.vim.git
-[submodule "bundle/YouCompleteMe"]
-	path = bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
+	url = https://github.com/alfredodeza/coveragepy.vim.git
 [submodule "bundle/vim-endwise"]
 	path = bundle/vim-endwise
 	url = https://github.com/tpope/vim-endwise.git
@@ -72,16 +69,16 @@
 	url = https://github.com/kchmck/vim-coffee-script.git
 [submodule "bundle/vim-test"]
 	path = bundle/vim-test
-	url = git@github.com:janko-m/vim-test.git
+	url = https://github.com/janko-m/vim-test.git
 [submodule "bundle/vim-dispatch"]
 	path = bundle/vim-dispatch
-	url = git@github.com:tpope/vim-dispatch.git
+	url = https://github.com/tpope/vim-dispatch.git
 [submodule "bundle/vim-rails"]
 	path = bundle/vim-rails
-	url = git@github.com:tpope/vim-rails.git
+	url = https://github.com/tpope/vim-rails.git
 [submodule "bundle/vim-bundler"]
 	path = bundle/vim-bundler
-	url = git@github.com:tpope/vim-bundler.git
+	url = https://github.com/tpope/vim-bundler.git
 [submodule "bundle/rust.vim"]
 	path = bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
@@ -91,3 +88,6 @@
 [submodule "bundle/shadowenv.vim"]
 	path = bundle/shadowenv.vim
 	url = https://github.com/Shopify/shadowenv.vim.git
+[submodule "fairyfloss.vim"]
+	path = bundle/fairyfloss.vim
+	url = https://github.com/tssm/fairyfloss.vim.git
