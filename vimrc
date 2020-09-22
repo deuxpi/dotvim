@@ -27,21 +27,24 @@ set t_Co=256
 if hostname() == "mail"
   colorscheme ir_black
 else
-  " colorscheme solarized
-  " let g:solarized_visibility = "low"
-  " let g:solarized_term = 1
-
   colorscheme fairyfloss
   set termguicolors
 endif
 
 highlight Comment cterm=italic
+highlight clear SignColumn
 
 set undolevels=1000
 set backspace=start,indent,eol
 set scrolloff=1
 set sidescrolloff=5
 set nofoldenable
+set cmdheight=2
+set formatoptions-=cro
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
+set hidden
 
 " Code formatting, tabs to 4 spaces
 set autoindent
@@ -98,6 +101,28 @@ let g:flake8_show_quickfix=1
 let g:flake8_show_in_gutter=1
 let g:flake8_show_in_file=1
 
+" Coc
+let g:coc_disable_startup_warning = 1
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <c-@> coc#refresh()
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+
 vmap <leader>q gq
 nmap <leader>q gqap
 
@@ -145,13 +170,12 @@ augroup encrypted
   autocmd BufWritePost,FileWritePost *.gpg,*.asc u
 augroup END
 
-" LanguageTool
-let g:languagetool_jar='~/.vim/bundle/LanguageTool/LanguageTool-2.8/languagetool-commandline.jar'
 
 " vim-airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
+let g:airline_theme='bubblegum'
 
 " ale
 let g:ale_linters = {'ruby': ['rubocop'], 'eruby': ['erblint'], 'javascript': ['eslint']}
@@ -169,35 +193,6 @@ let g:gitgutter_sign_modified_removed = '●'
 
 " vim-json
 let g:vim_json_syntax_conceal = 0
-
-" supertab
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
-" syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_asm_checkers = []
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_perl_checkers = ['perlcritic']
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_eruby_ruby_quiet_messages =
-            \ {'regex': 'possibly useless use of a variable in void context'}
-let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_ruby_rubocop_exe = 'bundle exec rubocop'
-let g:syntastic_sh_shellcheck_args="--exclude=SC1091"
-
-" UltiSnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-" YouCompleteMe
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:ycm_server_python_interpreter='/usr/bin/python'
-let g:ycm_show_diagnostics_ui = 0
 
 " fzf
 set rtp+=/usr/local/opt/fzf

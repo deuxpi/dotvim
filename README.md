@@ -17,10 +17,3 @@ For example:
     Submodule 'bundle/pathogen' (https://github.com/tpope/vim-pathogen.git) registered for path 'bundle/pathogen'
     Submodule 'bundle/vim-colors-solarized' (git://github.com/altercation/vim-colors-solarized.git) registered for path 'bundle/vim-colors-solarized'
     ...
-
-## YouCompleteMe installation
-
-Refer to the [YouCompleteMe documentation](http://valloric.github.io/YouCompleteMe/#installation)
-to finalize the installation of the plugin. Personally, the Full Installation
-Guide has been the most reliable installation method, despite being slightly
-more involved.

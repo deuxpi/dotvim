@@ -1,0 +1,9 @@
+{
+  "solargraph.promptDownload": false,
+  "solargraph.transport": "external",
+  "solargraph.externalServer": {
+    "host": "localhost",
+    "port": 7658
+  },
+  "solargraph.checkGemVersion": false
+}

@@ -91,3 +91,6 @@
 [submodule "fairyfloss.vim"]
 	path = bundle/fairyfloss.vim
 	url = https://github.com/tssm/fairyfloss.vim.git
+[submodule "bundle/coc.nvim"]
+	path = bundle/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
