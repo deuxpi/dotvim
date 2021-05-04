@@ -2,65 +2,99 @@ let g:pathogen_disabled = [ 'pathogen' ]
 call pathogen#infect()
 call pathogen#helptags()
 
-set nocompatible
+set encoding=utf-8
 
-" Enable filetype plugins
-filetype plugin on
-filetype indent on
+if has('autocmd')
+  filetype plugin indent on
+endif
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
+endif
+
+set autoindent
+set backspace=indent,eol,start
+set smarttab
+
+set nrformats-=octal
+
+if !has('nvim') && &ttimeoutlen == -1
+  set ttimeout
+  set ttimeoutlen=100
+endif
+
+set incsearch
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+endif
+
+set laststatus=2
+set ruler
+set wildmenu
+
+if !&scrolloff
+  set scrolloff=1
+endif
+if !&sidescrolloff
+  set sidescrolloff=5
+endif
+set display+=lastline
+
+set autoread
+
+if &history < 1000
+  set history=1000
+endif
+if &tabpagemax < 50
+  set tabpagemax=50
+endif
+if !empty(&viminfo)
+  set viminfo^=!
+endif
+set sessionoptions-=options
+set viewoptions-=options
 
 set showfulltag
 set showcmd
 set showmode
-set ruler
-set wildmenu
 set magic
 
 " Blink matching brackets for some tenth of a second
 set showmatch
 set mat=2
 
-" Syntax highlighting
-syntax on
-set background=dark
-set t_Co=256
-
 if hostname() == "mail"
+  set background=dark
   colorscheme ir_black
 else
+  " set termguicolors
   colorscheme fairyfloss
-  set termguicolors
 endif
 
-highlight Comment cterm=italic
 highlight clear SignColumn
 
-set undolevels=1000
-set backspace=start,indent,eol
-set scrolloff=1
-set sidescrolloff=5
 set nofoldenable
 set cmdheight=2
 set formatoptions-=cro
 set updatetime=300
 set shortmess+=c
-set signcolumn=yes
+set signcolumn=number
 set hidden
 
 " Code formatting, tabs to 4 spaces
-set autoindent
 set expandtab
-set nrformats-=octal
 set tabstop=4
 set shiftwidth=4
-set smarttab
 set nowrap
+
+set undolevels=1000
 
 " Typically useful for Python code
 set nofoldenable foldmethod=indent
 
 " Turn all kinds of temporary files off
 set nobackup
-set nowb
+set nowritebackup
 set noswapfile
 
 set viminfo='100,<1000,s100,h
@@ -172,7 +206,6 @@ augroup END
 
 
 " vim-airline
-set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline_theme='bubblegum'

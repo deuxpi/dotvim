@@ -5,5 +5,13 @@
     "host": "localhost",
     "port": 7658
   },
-  "solargraph.checkGemVersion": false
+  "solargraph.checkGemVersion": false,
+
+  "languageserver": {
+      "sorbet": {
+        "command": "bundle",
+        "args": ["exec", "srb", "tc", "--lsp"],
+        "filetypes": ["ruby"]
+      }
+   }
 }
