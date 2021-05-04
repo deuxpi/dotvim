@@ -1,4 +1,6 @@
 {
+  "diagnostic.displayByAle": true,
+
   "solargraph.promptDownload": false,
   "solargraph.transport": "external",
   "solargraph.externalServer": {

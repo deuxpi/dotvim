@@ -1,8 +1,22 @@
-let g:pathogen_disabled = [ 'pathogen' ]
-call pathogen#infect()
-call pathogen#helptags()
-
 set encoding=utf-8
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'airblade/vim-gitgutter'
+Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rhubarb'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Shopify/shadowenv.vim'
+
+Plug 'deuxpi/vim-fairyfloss'
+
+call plug#end()
+
 
 if has('autocmd')
   filetype plugin indent on
@@ -211,6 +225,7 @@ let g:airline#extensions#ale#enabled = 1
 let g:airline_theme='bubblegum'
 
 " ale
+let g:ale_disable_lsp = 1
 let g:ale_linters = {'ruby': ['rubocop'], 'eruby': ['erblint'], 'javascript': ['eslint']}
 let g:ale_fixers = {'javascript': ['eslint'], 'ruby': ['rubocop']}
 let g:ale_ruby_rubocop_executable = 'bundle'
