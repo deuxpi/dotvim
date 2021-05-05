@@ -11,7 +11,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rhubarb'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Shopify/shadowenv.vim'
+" Plug 'Shopify/shadowenv.vim'
 
 Plug 'deuxpi/vim-fairyfloss'
 
@@ -77,13 +77,8 @@ set magic
 set showmatch
 set mat=2
 
-if hostname() == "mail"
-  set background=dark
-  colorscheme ir_black
-else
-  " set termguicolors
-  colorscheme fairyfloss
-endif
+colorscheme fairyfloss_dark
+set termguicolors
 
 highlight clear SignColumn
 
