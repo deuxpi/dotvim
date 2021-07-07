@@ -80,7 +80,7 @@ set magic
 set showmatch
 set mat=2
 
-colorscheme fairyfloss_dark
+silent! colorscheme fairyfloss_dark
 set termguicolors
 
 highlight clear SignColumn
