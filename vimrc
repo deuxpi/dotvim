@@ -14,6 +14,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rhubarb'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-ruby/vim-ruby'
 " Plug 'Shopify/shadowenv.vim'
 
 Plug 'deuxpi/vim-fairyfloss'
@@ -120,13 +121,17 @@ autocmd BufNewFile,BufRead *.tsx set ft=javascript
 autocmd FileType coffee,css,javascript,json,html,scss,xhtml,xml :set ts=2 sw=2 sts=2 et ch=2
 autocmd FileType lua :set ts=2 sw=2 sts=2
 autocmd FileType make :set ts=4 noet nolist
-autocmd FileType ruby,eruby :set ts=2 sw=2 sts=2 et cc=120
 autocmd FileType liquid :set noeol
+
+" vim-ruby
 
 " x = if condition
 "   something
 " end
 let g:ruby_indent_assignment_style = 'variable'
+
+let g:ruby_space_errors = 1
+
 
 " Toggle code formatting when pasting chunks of text. Ridiculously useful.
 map <F8> :set invpaste<CR>
